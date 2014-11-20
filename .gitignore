@@ -1,0 +1,4 @@
+.netrwhist
+.vim/view/*
+.vim/bundle/*
+!.vim/bundle/Vundle
