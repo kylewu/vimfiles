@@ -254,7 +254,7 @@ au BufRead,BufNewFile *.html set noexpandtab
 
 " =======================
 " Python
-au BufEnter,BufNewFile *.py set expandtab | set list! | set listchars=tab:>
+au BufEnter,BufNewFile *.py set noexpandtab
 autocmd FileType python setl sw=4 | setl ts=4 | setl sts=4
 
 " ======================
