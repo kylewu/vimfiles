@@ -18,6 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
@@ -68,15 +69,16 @@ syntax enable
 
 " Color Scheme
 if !has('gui_running')
-	" Compatibility for Terminal
-	let g:solarized_termtrans=1
-	if $TERM == 'xterm-256color'
-		set t_Co=256
-	else
-		" Make Solarized use 16 colors for Terminal support
-		let g:solarized_termcolors=16
-	endif
+  " Compatibility for Terminal
+  let g:solarized_termtrans=1
+  if $TERM == 'xterm-256color'
+    set t_Co=256
+  else
+    " Make Solarized use 16 colors for Terminal support
+    let g:solarized_termcolors=16
+  endif
 endif
+
 set background=dark
 colorscheme solarized "desert  
 
@@ -88,13 +90,13 @@ set noeb
 
 " Font
 if has("unix")
-	let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-      "Mac options here
-			set gfn=Monaco:h14
-		else
-			set gfn=Monaco\ 11
-    endif
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    "Mac options here
+    set gfn=Monaco:h14
+  else
+    set gfn=Monaco\ 11
+  endif
 endif
 "set gfn=Inconsolata:h16
 "set gfn=DroidSansMono\ 11 "Monaco\ 11
@@ -271,28 +273,16 @@ autocmd BufEnter,BufReadPre *.html setl ts=2 | setl sts=2 | setl sw=2
 " compile less
 nnoremap ,m :w <BAR> !lessc % > %:p:r.css<CR><space>
 
-" ======================
-" Append modeline after last line in buffer.
-" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
-" files.
-function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d :",
-        \ &tabstop, &shiftwidth, &textwidth)
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
-endfunction
-nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
-
 " =====================
 " tags
 " =====================
 if has("unix")
-	let s:uname = system("uname")
-    if s:uname == "Darwin\n"
-      " Mac options here
-			set tags=/Users/user/tags
-		else
-			" Ubuntu only
-			set tags=/home/user/.tags
-    endif
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    " Mac options here
+    set tags=/Users/wwu/tags
+  else
+    " Ubuntu only
+    set tags=/home/wwu/.tags
+  endif
 endif
