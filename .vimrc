@@ -18,8 +18,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'gregsexton/MatchTag'

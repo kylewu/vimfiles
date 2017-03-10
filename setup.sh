@@ -8,8 +8,8 @@ ROOT=`pwd`
 
 echo "Linking vim files"
 
-ln -s "$ROOT/.vim" ~
-ln -s "$ROOT/.vimrc" ~
+cp -r "$ROOT/.vim" ~/.vim
+cp "$ROOT/.vimrc" ~/.vimrc
 
 echo "Installing bundles"
 vim +BundleInstall +qall
